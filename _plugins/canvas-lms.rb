@@ -1,7 +1,4 @@
-require 'rubygems'
-require 'bundler/setup'
 require 'lms_api'
-require 'Jekyll'
 
 class Authentication
   @@token = "string"
