@@ -50,7 +50,6 @@ class CanvasSyncer
     return @api.api_get_all_request(url)
   end
 
-
   def getAllModules()
     if (!@modules)
       params = {
@@ -103,6 +102,7 @@ class CanvasSyncer
     ret = @api.api_post_request(url, module_item: module_item)
     print "OK\n"
   end
+
   #https://canvas.instructure.com/doc/api/modules.html#method.context_module_items_api.create
   $moduleComponents = {}
   $moduleComponents['title'] = { type: "SubHeader" }
@@ -138,10 +138,10 @@ class CanvasSyncer
         ctr = ctr + 1
       end
       # also add a link to the module on the webpage
-      if(pageURL[0] == '/')
-        pageURL = siteBaseURL+pageURL
+      if (pageURL[0] == '/')
+        pageURL = siteBaseURL + pageURL
       end
-      canvasIdx = canvasItems.index { |item| item['external_url'] == pageURL}
+      canvasIdx = canvasItems.index { |item| item['external_url'] == pageURL }
       if canvasIdx == nil
         self.createModuleItem(modID, "ExternalURL", "Additional content on the course webpage", ctr, 1, pageURL)
       end
@@ -178,7 +178,7 @@ class CanvasSyncer
 
       cleanContent = cleanContent.gsub(/<link rel="stylesheet" href="https:\/\/instructure-uploads.s3.amazonaws.com\/([^"]+)">/, '')
       cleanContent = cleanContent.gsub(/<script src="https:\/\/instructure-uploads.s3.amazonaws.com\/([^"]+)"><\/script>/, '')
-      if(cleanContent != contents || canvasDueDate != dueDate)
+      if (cleanContent != contents || canvasDueDate != dueDate)
         params = {
           id: canvasAssignment['id'],
           course_id: @course_id,
@@ -193,17 +193,21 @@ class CanvasSyncer
   end
 end
 
-canvasSyncer = CanvasSyncer.new()
+if ENV['CANVAS_COURSE_ID'] && ENV['CANVAS_TOKEN'] && ENV['CANVAS_BASE_URL']
+  canvasSyncer = CanvasSyncer.new()
 
-@moduleCount = 1;
-Jekyll::Hooks.register :pages, :post_render do |page|
-  site = page.site
-  baseURL = site.config['url'] + site.baseurl
+  @moduleCount = 1;
+  Jekyll::Hooks.register :pages, :post_render do |page|
+    site = page.site
+    baseURL = site.config['url'] + site.baseurl
 
-  if (page['layout'] == 'assignment')
-    canvasSyncer.syncAssignment(page['title'], page['due_date'], page['content'], baseURL, page.permalink())
-  elsif (page['layout'] == 'module')
-    canvasSyncer.syncModule(page['title'], @moduleCount, page['lessons'], page['tutorials'], baseURL, page.permalink())
-    @moduleCount = @moduleCount + 1
+    if (page['layout'] == 'assignment')
+      canvasSyncer.syncAssignment(page['title'], page['due_date'], page['content'], baseURL, page.permalink())
+    elsif (page['layout'] == 'module')
+      canvasSyncer.syncModule(page['title'], @moduleCount, page['lessons'], page['tutorials'], baseURL, page.permalink())
+      @moduleCount = @moduleCount + 1
+    end
   end
+else
+  print "NOT syncing to Canvas. If you would like to sync to Canvas, set the environmental variables: CANVAS_COURSE_ID, CANVAS_TOKEN, CANVAS_BASE_URL\n"
 end
