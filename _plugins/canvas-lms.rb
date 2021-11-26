@@ -70,7 +70,7 @@ class CanvasSyncer
       module: { name: name, position: sort_order }
     }
     url = LMS::Canvas.lms_url("CREATE_MODULE", params)
-    print "Creating canvas module " + name + "\n"
+    print "Canvas importer: Creating canvas module " + name + "\n"
     ret = @api.api_post_request(url, module: { name: name, position: sort_order })
     return ret['id']
   end
@@ -95,9 +95,7 @@ class CanvasSyncer
     }
     url = LMS::Canvas.lms_url("CREATE_MODULE_ITEM", params)
     print "Creating module item '" + title + "'\n"
-    print params
     et = @api.api_post_request(url, module_item: module_item)
-    print "OK\n"
   end
 
   #https://canvas.instructure.com/doc/api/modules.html#method.context_module_items_api.create
@@ -181,7 +179,7 @@ class CanvasSyncer
           course_id: @course_id,
           assignment: assignment
         }
-        print "Change detected, updating assignment " + title + "\n"
+        print "Canvas importer: change detected, updating assignment " + title + "\n"
         url = LMS::Canvas.lms_url("EDIT_ASSIGNMENT", params)
         ret = @api.api_put_request(url, assignment: assignment)
       end
@@ -199,8 +197,16 @@ if ENV['CANVAS_COURSE_ID'] && ENV['CANVAS_TOKEN'] && ENV['CANVAS_BASE_URL']
     baseURL = site.config['url'] + site.baseurl
 
     if (page['layout'] == 'assignment')
+      if(page['due_date'] == nil)
+        print "Canvas importer: no due date for assignment " + page['title'] + ": skipping\n"
+        next
+      end
       canvasSyncer.syncAssignment(page['title'], page['due_date'], page['content'], baseURL, page.permalink())
     elsif (page['layout'] == 'module')
+      if(page['lessons'] == nil)
+        print "Canvas importer: no lessons for module " + page['title'] + ": skipping\n"
+        next
+      end
       canvasSyncer.syncModule(page['title'], @moduleCount, page['lessons'], page['tutorials'], baseURL, page.permalink())
       @moduleCount = @moduleCount + 1
     end
