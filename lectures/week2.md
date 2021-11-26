@@ -1,4 +1,5 @@
 ---
+layout: module
 title: Week 2 - Design Documentation and Patterns
 permalink: /modules/week2-design-docs-patterns
 parent: Modules

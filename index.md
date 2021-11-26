@@ -1,6 +1,6 @@
 ---
-layout: home
 title: Just the Class
+layout: default
 nav_exclude: true
 seo:
   type: Course
