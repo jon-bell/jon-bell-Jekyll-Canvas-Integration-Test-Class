@@ -96,7 +96,7 @@ class CanvasSyncer
     url = LMS::Canvas.lms_url("CREATE_MODULE_ITEM", params)
     print "Creating module item '" + title + "'\n"
     print params
-    ret = @api.api_post_request(url, module_item: module_item)
+    et = @api.api_post_request(url, module_item: module_item)
     print "OK\n"
   end
 

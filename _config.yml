@@ -19,7 +19,7 @@ safe: false
 description: A sandbox Jekyll installation to hook up to Canvas LMS
 author: Jonathan Bell
 baseurl: '/jon-bell-Jekyll-Canvas-Integration-Test-Class' # the subpath of your site, e.g. /blog
-url: '' # the base hostname & protocol for your site, e.g. http://example.com
+url: 'https://jon-bell.github.io' # the base hostname & protocol for your site, e.g. http://example.com
 exclude: ["Gemfile", "Gemfile.lock", "LICENSE", "README.md", "vendor", "_plugins"]
 
 # Theme settings
