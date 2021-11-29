@@ -79,3 +79,7 @@ plugins:
   - jekyll-readme-index
   - jekyll-titles-from-headings
   - jekyll-relative-links
+  - jekyll-last-modified-at
+
+last-modified-at:
+  date-format: '%b %d, %y %H:%M %Z'
