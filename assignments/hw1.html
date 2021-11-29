@@ -1,0 +1,462 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  
+
+  <link rel="shortcut icon" href="/jon-bell-Jekyll-Canvas-Integration-Test-Class/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="/jon-bell-Jekyll-Canvas-Integration-Test-Class/assets/css/just-the-docs-default.css">
+
+  
+
+  
+    <script type="text/javascript" src="/jon-bell-Jekyll-Canvas-Integration-Test-Class/assets/js/vendor/lunr.min.js"></script>
+  
+  <script type="text/javascript" src="/jon-bell-Jekyll-Canvas-Integration-Test-Class/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Assignment 1 | Canvas/Jekyll Sandbox</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Assignment 1" />
+<meta name="author" content="Jonathan Bell" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A sandbox Jekyll installation to hook up to Canvas LMS" />
+<meta property="og:description" content="A sandbox Jekyll installation to hook up to Canvas LMS" />
+<link rel="canonical" href="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/assignments/hw1" />
+<meta property="og:url" content="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/assignments/hw1" />
+<meta property="og:site_name" content="Canvas/Jekyll Sandbox" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Assignment 1" />
+<script type="application/ld+json">
+{"description":"A sandbox Jekyll installation to hook up to Canvas LMS","url":"https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/assignments/hw1","@type":"WebPage","author":{"@type":"Person","name":"Jonathan Bell"},"headline":"Assignment 1","dateModified":"2021-11-29T21:47:00+00:00","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+</head>
+
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="svg-link" viewBox="0 0 24 24">
+      <title>Link</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+      </svg>
+    </symbol>
+    <symbol id="svg-search" viewBox="0 0 24 24">
+      <title>Search</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+        <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+    </symbol>
+    <symbol id="svg-menu" viewBox="0 0 24 24">
+      <title>Menu</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+        <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </symbol>
+    <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+      <title>Expand</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </symbol>
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+      <title>Document</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+        <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+      </svg>
+    </symbol>
+  </svg>
+
+  <div class="side-bar">
+    <div class="site-header">
+      <a href="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/" class="site-title lh-tight">
+  Canvas/Jekyll Sandbox
+
+</a>
+      <a href="#" id="menu-button" class="site-button">
+        <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+      </a>
+    </div>
+    <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      
+        <ul class="nav-list"><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/modules/" class="nav-list-link">Modules</a><ul class="nav-list "><li class="nav-list-item "><a href="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/modules/week1-overview-design-principles" class="nav-list-link">Week 1 - Overview and Design Principles</a></li><li class="nav-list-item "><a href="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/modules/week2-design-docs-patterns" class="nav-list-link">Week 2 - Design Documentation and Patterns</a></li></ul></li><li class="nav-list-item active"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/assignments/" class="nav-list-link">Assignments</a><ul class="nav-list "><li class="nav-list-item  active"><a href="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/assignments/hw1" class="nav-list-link active">Assignment 1</a></li><li class="nav-list-item "><a href="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/assignments/hw2" class="nav-list-link">Assignment 2</a></li><li class="nav-list-item "><a href="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/assignments/project-overview" class="nav-list-link">Project Overview</a></li><li class="nav-list-item "><a href="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/assignments/project-deliverable" class="nav-list-link">Project Final Deliverable</a></li></ul></li><li class="nav-list-item"><a href="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/about/" class="nav-list-link">About</a></li><li class="nav-list-item"><a href="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/calendar/" class="nav-list-link">Calendar</a></li><li class="nav-list-item"><a href="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/schedule/" class="nav-list-link">Schedule</a></li></ul>
+
+      
+    </nav>
+    <footer class="site-footer">
+      This site uses <a href="https://github.com/pmarsceill/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+    </footer>
+  </div>
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+      
+        <div class="search">
+          <div class="search-input-wrap">
+            <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search Canvas/Jekyll Sandbox" aria-label="Search Canvas/Jekyll Sandbox" autocomplete="off">
+            <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+          </div>
+          <div id="search-results" class="search-results"></div>
+        </div>
+      
+      
+      
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list">
+              
+                <li class="breadcrumb-nav-list-item"><a href="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/assignments/">Assignments</a></li>
+              
+              <li class="breadcrumb-nav-list-item"><span>Assignment 1</span></li>
+            </ol>
+          </nav>
+        
+      
+      <div id="main-content" class="main-content" role="main">
+        
+          <h2 class="fs-6" id="assignment-1">
+        
+        
+          <a href="#assignment-1" class="anchor-heading" aria-labelledby="assignment-1"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 
+    
+    Assignment 1: Onboarding
+    
+    <strong class="label label-red">Due Friday Feb 5, 10:00pm EST</strong>
+
+        
+        
+      </h2>
+    
+
+
+<p>Welcome aboard to the Covey.Town team! We’re glad that you’re here and ready to join our development team as a new software engineer.
+We’re building an open source virtual meeting application, and are very happy to see that we have so many new developers who can help make this application a reality.
+By the end of the semester, you’ll be able to propose, design, implement and test a new feature for our project.
+We understand that some of you may have some web development experience, but don’t expect that most of you do, and hence, have created
+this series of four individual assignments to help you get up to speed with our existing codebase and development environment.</p>
+
+<p>Our lead software engineer, Avery, has developed a prototype for Covey.Town, but in their haste, they neglected to create very good
+documentation. 
+Covey.Town is a web application that consists of some code that runs in each client’s web browser, and also code that runs on
+a server.
+In this assignment, you will examine some of the existing code that runs in the server, create documentation for it, and add some new functionality to it.</p>
+
+<p>Your assignment will be graded following the rubric embedded in this document, which will consist of the marks “Satisfactory,” “Meets Minimum Expectations,” and “Not Acceptable.”
+Based on past experiences, we project that this assignment could take you up to 14 hours (depending on your prior preparation).
+We encourage you to start early so that you can post questions on Piazza, make the most use of our TAs’ tutorials, and
+ attend office hours as necessary in order to ensure that you can reach Satisfactory marks across the board.</p>
+
+<p>The objectives for this first assignment, are to:</p>
+<ul>
+  <li>Apply design principles and design patterns skills to real code</li>
+  <li>Evaluate naming and other style concerns of an existing codebase</li>
+  <li>Write new code in TypeScript</li>
+</ul>
+
+<p>Parts 1 and 2 of this assignment should be completed in a text editor or word processor, and submitted as a PDF.
+Part 3 is a coding task, and you will implement it by modifying the same code that you are documenting in Parts 1 and 2.</p>
+
+<p><strong>This is an individual assignment.</strong></p>
+
+<p>Please post any questions about this assignment on Piazza.</p>
+      <h3 id="change-log">
+        
+        
+          <a href="#change-log" class="anchor-heading" aria-labelledby="change-log"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Change Log
+        
+        
+      </h3>
+    
+<ul>
+  <li>1/24: Updated handout file to copy <code class="language-plaintext highlighter-rouge">.env.example</code> to <code class="language-plaintext highlighter-rouge">.env</code>. If you already have the handout, you can fix yours by copying the file <code class="language-plaintext highlighter-rouge">.env.example</code> to <code class="language-plaintext highlighter-rouge">.env</code>. If you download the handout now, it will already be in position. - JSB</li>
+  <li>1/26: Update broken link to style guide in part 3 rubric - JSB</li>
+  <li>1/27: Clarify that <code class="language-plaintext highlighter-rouge">roomJoinHandler</code> and <code class="language-plaintext highlighter-rouge">roomSubscriptionHandler</code> should not “be treated as classes,” but more precisely, that you should create a CRC card for each, even though they are not classes. - JSB</li>
+  <li>1/31: If you are having trouble running tests, please update the <code class="language-plaintext highlighter-rouge">jest.config.js</code> file to read as follows (the <code class="language-plaintext highlighter-rouge">testPathIgnorePatterns</code> is new) - JSB
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>module.exports = {
+preset: "ts-jest",
+testEnvironment: "node",
+testPathIgnorePatterns: ['/node_modules/', '/build/'],
+};
+</code></pre></div>    </div>
+  </li>
+  <li>2/1: Add submission warning about .tgz vs .zip - JSB</li>
+  <li>2/2: Clarify the checks on <code class="language-plaintext highlighter-rouge">eslint-disable</code> and <code class="language-plaintext highlighter-rouge">@ts-ignore</code> that GradeScope now performs, add small hint in Part 3 step 1 that proceeding to step 2 is required to fully implement <code class="language-plaintext highlighter-rouge">CoveyRoomStore</code> - JSB</li>
+  <li>2/4: If you are having issues with prettier causing linter errors with arrow function arguments, please update your <code class="language-plaintext highlighter-rouge">.prettierrc</code> to set <code class="language-plaintext highlighter-rouge">arrowParens: 'always'</code> - JSB</li>
+</ul>
+      <h2 id="part-1-documenting-the-design">
+        
+        
+          <a href="#part-1-documenting-the-design" class="anchor-heading" aria-labelledby="part-1-documenting-the-design"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Part 1: Documenting the design
+        
+        
+      </h2>
+    
+<p>Avery’s first prototype implementation of Covey.Town was unreadable spaghetti code that was deemed
+“Not Satisfactory” by upper management and was rejected. Avery spent the whole weekend trying to rewrite it following
+the design principles covered in Lessons 1.2-1.3. Avery’s done an OK job at this, and the code is much better, but it’s still missing
+design documents. Your first task is to review Avery’s code and document the design.</p>
+
+<p><a href="/jon-bell-Jekyll-Canvas-Integration-Test-Class/assignments/hw1-handout.zip">Download Avery’s code for the backend module here</a>.
+Extract this archive, run <code class="language-plaintext highlighter-rouge">npm install</code> in it to fetch all of the dependencies, and open the code in your IDE
+to start to get a handle on what Avery did here.
+To help you set up a local development environment for this class, we’ve prepared a tutorial for <a href="/jon-bell-Jekyll-Canvas-Integration-Test-Class/tutorials/week1-getting-started">setting up a development environment with NodeJS, VSCode and TypeScript</a>.</p>
+
+<p>Review Avery’s code to understand the role of the following types, and create a CRC card for each:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">PlayerSession</code> (in <code class="language-plaintext highlighter-rouge">src/types/PlayerSession.ts</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">Player</code> (in <code class="language-plaintext highlighter-rouge">src/types/Player.ts</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">CoveyRoomListener</code> (in <code class="language-plaintext highlighter-rouge">src/types/CoveyRoomListener.ts</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">CoveyRoomController</code> (in <code class="language-plaintext highlighter-rouge">lib/CoveyRoomController.ts</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">roomJoinHandler</code> (in <code class="language-plaintext highlighter-rouge">requestHandlers/CoveyRoomRequestHandlers.ts</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">roomSubscriptionHandler</code> (in <code class="language-plaintext highlighter-rouge">requestHandlers/CoveyRoomRequestHandlers.ts</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">IVideoClient</code> (in <code class="language-plaintext highlighter-rouge">lib/IVideoClient.ts</code>)</li>
+</ul>
+
+<p>Please refer to Lesson 2.1 for more details about CRC cards, and examples of CRC cards.</p>
+
+<p>Note that TypeScript functions are first-class entities that can be passed around as objects.
+Hence, while traditionally the first ‘C’ in ‘CRC’ stands for <em>Class</em> (that is, we make CRC cards for <em>classes</em>), for this design exercise, we’ll consider the two functions <code class="language-plaintext highlighter-rouge">roomJoinHandler</code> and <code class="language-plaintext highlighter-rouge">roomSubscriptionHandler</code> as sufficiently important types to each have CRC cards.
+In a language like Java, each of these functions would likely end up being a class with a single function — in TypeScript, we can 
+have that single function stand on its own without being part of a class.</p>
+
+<p>Each CRC card should include:</p>
+<ul>
+  <li>the name of the class, function or interface being described</li>
+  <li>a short phrase or sentence describing the responsibility of this class in the context of the entire application</li>
+  <li>the collaborators of the class.  These are the classes which are directly coupled to the class.  In some cases, this list may be open-ended.</li>
+  <li>the portion of the application’s state is that is kept in an object of this class (note: methods to not have state)</li>
+</ul>
+
+<p><strong>Notes about <code class="language-plaintext highlighter-rouge">Promise</code> and <code class="language-plaintext highlighter-rouge">async/await</code> in Avery’s code</strong>: You’ll notice that Avery’s code makes use of some types and
+keywords that may not be clear to you right now, for instance the <code class="language-plaintext highlighter-rouge">addPlayer</code> method in <code class="language-plaintext highlighter-rouge">CoveyRoomController</code>:</p>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">async</span> <span class="nx">addPlayer</span><span class="p">(</span><span class="nx">newPlayer</span><span class="p">:</span> <span class="nx">Player</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">PlayerSession</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">theSession</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PlayerSession</span><span class="p">(</span><span class="nx">newPlayer</span><span class="p">);</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">sessions</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">theSession</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">players</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">newPlayer</span><span class="p">);</span>
+
+    <span class="c1">// Create a video token for this user to join this room</span>
+    <span class="nx">theSession</span><span class="p">.</span><span class="nx">videoToken</span> <span class="o">=</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">videoClient</span><span class="p">.</span><span class="nx">getTokenForRoom</span><span class="p">(</span><span class="dl">'</span><span class="s1">demoRoom</span><span class="dl">'</span><span class="p">,</span> <span class="nx">newPlayer</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+
+    <span class="c1">// Notify other players that this player has joined</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">listeners</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">listener</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">listener</span><span class="p">.</span><span class="nx">onPlayerJoined</span><span class="p">(</span><span class="nx">newPlayer</span><span class="p">));</span>
+
+    <span class="k">return</span> <span class="nx">theSession</span><span class="p">;</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+<p>We will cover these keywords and their implications in detail <a href="/jon-bell-Jekyll-Canvas-Integration-Test-Class/schedule/">in week 4</a>. 
+For now, it’s easiest if you simply ignore these keywords - and when you see a return type of <code class="language-plaintext highlighter-rouge">Promise&lt;Foo&gt;</code>, 
+look past the <code class="language-plaintext highlighter-rouge">Promise</code> part, and instead simply consider the return type to be <code class="language-plaintext highlighter-rouge">Foo</code> (in the case of <code class="language-plaintext highlighter-rouge">addPlayer</code> above, 
+consider the return type to simply be a <code class="language-plaintext highlighter-rouge">PlayerSession</code>).</p>
+      <h3 id="rubric-specification-for-part-1">
+        
+        
+          <a href="#rubric-specification-for-part-1" class="anchor-heading" aria-labelledby="rubric-specification-for-part-1"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Rubric Specification for Part 1
+        
+        
+      </h3>
+    
+
+<p>Part 1 will account for 1/3 of your overall grade on this assignment.</p>
+
+<p>To receive a mark of “Satisfactory” for Part 1, your submission must satisfy this specification:</p>
+<ul>
+  <li>Include a CRC card for each of the 7 types listed above</li>
+  <li>Each card must include a short phrase or two describing the responsibilities of the type in the context of the application</li>
+  <li>Each card must include all relevant collaborators (when these can be determined from the codebase)</li>
+  <li>Each card must include a description of the state that is kept by objects of the class.</li>
+</ul>
+
+<p>To receive a mark of “Meets minimum expectations”, your submission for Part 1 must satisfy this specification:</p>
+<ul>
+  <li>Include a CRC card for each of the 7 types listed above</li>
+  <li>Each card includes a short phrase or two describing the responsibilities of and state stored by each type, as outlined above. Some of these may be incorrect or irrelevant.</li>
+  <li>Most cards include their relevant collaborators, but some may be incorrect</li>
+</ul>
+
+<p>Submissions that do not meet the above criteria will receive no credit for part 1.</p>
+      <h2 id="part-2-evaluating-the-design">
+        
+        
+          <a href="#part-2-evaluating-the-design" class="anchor-heading" aria-labelledby="part-2-evaluating-the-design"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Part 2: Evaluating the design
+        
+        
+      </h2>
+    
+<p>Using the design principles covered in Lessons 1.2-1.3, please review the following aspects of Avery’s design,
+and provide a 2-4 sentence response to each of the following questions:</p>
+
+<ol>
+  <li>Does <code class="language-plaintext highlighter-rouge">CoveyRoomController</code> follow the principle of <em>encapsulation</em>? Explain how it does or does not follow this principle.</li>
+  <li>Avery is currently using a video service called <a href="https://www.twilio.com/video">Twilio Programmable Video</a> for Covey.Town.
+What changes would be necessary to change to a different provider, and how does Avery’s design make that easy or hard?</li>
+  <li>Consider the interface <code class="language-plaintext highlighter-rouge">CoveyRoomListener</code>: this interface is part of an <em>observer</em> pattern that Avery designed as part of the 
+server code. Describe the role of this pattern in the overall behavior of this system.</li>
+  <li>Avery received a warning for adherence to our project’s naming conventions. Thankfully, we think that the 
+names of each type are OK, and similarly, that the names for each property are OK.
+However, we were concerned with some of the names of local variables within 
+Avery’s code. Using the rules outlined in our <a href="/jon-bell-Jekyll-Canvas-Integration-Test-Class/policies/style/">style guide</a>, find three naming violations in local variables in Avery’s code and
+suggest a better name for each.</li>
+</ol>
+
+<p>The following <em>optional</em> question does not count towards your grade, but will be used to help Avery improve their design in the future (which 
+might mean that you have an easier time understanding Avery’s code!):</p>
+
+<p>What do you think overall of Avery’s design? Are there parts that you think could be improved?</p>
+      <h3 id="rubric-specification-for-part-2">
+        
+        
+          <a href="#rubric-specification-for-part-2" class="anchor-heading" aria-labelledby="rubric-specification-for-part-2"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Rubric Specification for Part 2
+        
+        
+      </h3>
+    
+
+<p>Each of the four questions in Part 2 will account for 1/12 of your overall grade for this assignment (that is, Part 2 will account for 1/3 of the overall grade,
+with each question weighted evenly).
+Each of the four questions will be graded to the following specification:</p>
+
+<p>To receive a mark of “Satisfactory” on a question:</p>
+<ul>
+  <li>The answer is factually correct, making use of the design principles and patterns described in class</li>
+  <li>The provided explanation is 2-4 sentences, and relates the abstract design concept to the code provided</li>
+</ul>
+
+<p>To receive a mark of “Meets minimum expectations” on a question:</p>
+<ul>
+  <li>The answer is factually correct</li>
+  <li>The provided explanation is 2-4 sentences and describes the design concept or the code, but does not directly link them together</li>
+</ul>
+
+<p>Answers that do not meet the above criteria will receive no credit for that question.</p>
+      <h2 id="part-3-extending-the-design">
+        
+        
+          <a href="#part-3-extending-the-design" class="anchor-heading" aria-labelledby="part-3-extending-the-design"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Part 3: Extending the design
+        
+        
+      </h2>
+    
+<p><a href="https://app.covey.town/">Avery’s prototype</a> <em>almost</em> implements the <em>Minimum Viable Product</em> (the first deliverable that
+satisfies our client’s <em>must have</em> requirements) for Covey.Town, but lacks one crucial feature: support for multiple rooms.
+The Covey.Town prototype currently consists of a single room: all users that connect to Covey.Town are placed on the same map.
+Our client is unhappy with this because they really want people to be able to create their own personalized spaces in Covey.Town.
+Also, since each room is mapped to a single video room in our video calling system, and each video room is <a href="https://www.twilio.com/docs/video/programmable-video-limits#room-and-participant-system-limits">limited to only 50 participants</a>,
+having a single room means that there can only be 50 people on the platform at once.</p>
+
+<p>But, if we can structure the system so that different groups of users join different rooms, then we can satisfy our client’s requirement,
+while also allowing more than 50 people to use the system at a time, by putting them in different rooms.
+Avery started implementing this feature, but never got to finish it: apparently
+Avery’s frontend code is a huge mess of spaghetti too, and Avery’s manager told them to focus on cleaning that up before finishing the product.</p>
+
+<p>While Avery cleans up the frontend code, <em>your</em> task will be to implement this last key feature: adding support for multiple rooms.
+For this onboarding assignment, you’ll modify Avery’s backend code to support multiple rooms. Once Avery finishes reorganizing the frontend
+code (and you learn about frontend development in class), you’ll also modify the frontend to support this feature.</p>
+
+<p>Avery previously created the interface <code class="language-plaintext highlighter-rouge">ICoveyRoomsStore</code> to define the behavior for a new class, <code class="language-plaintext highlighter-rouge">CoveyRoomsStore</code>, 
+which will hold onto a collection of <code class="language-plaintext highlighter-rouge">CoveyRoomController</code>s, one per-room. Your coding task is:</p>
+<ol>
+  <li>In the (empty) file <code class="language-plaintext highlighter-rouge">CoveyRoomsStore.ts</code>, define the new type <code class="language-plaintext highlighter-rouge">CoveyRoomsStore</code>, which should be a singleton, and
+implement the functionality of <code class="language-plaintext highlighter-rouge">ICoveyRoomsStore</code>. Note that you’ll need to proceed to step 2 to fully implement this method.</li>
+  <li>Change the <code class="language-plaintext highlighter-rouge">CoveyRoomController</code> so that it is no longer a singleton. Instead, there will be one instance of this type
+for each room, and those instances will be created by your <code class="language-plaintext highlighter-rouge">CoveyRoomsStore</code>. Add a public constructor, and a new <em>private</em>, <em>readonly</em> property, called <code class="language-plaintext highlighter-rouge">_coveyRoomID</code> (and a <a href="https://www.typescriptlang.org/docs/handbook/classes.html#accessors">TypeScript-style getter</a>) to 
+<code class="language-plaintext highlighter-rouge">CoveyRoomController</code> so that each room controller knows the name of the room that it is mapped to. Update the call to
+<code class="language-plaintext highlighter-rouge">getTokenForRoom</code> to pass this room ID instead of the hard-coded one.</li>
+  <li>Change the <code class="language-plaintext highlighter-rouge">roomSubscriptionHandler</code> and <code class="language-plaintext highlighter-rouge">roomJoinHandler</code> to retrieve the correct <code class="language-plaintext highlighter-rouge">CoveyRoomController</code> from your
+<code class="language-plaintext highlighter-rouge">CoveyRoomsStore</code>, based on the <code class="language-plaintext highlighter-rouge">coveyRoomID</code> requested.</li>
+</ol>
+
+<p>Conveniently (or not so conveniently, depending on how you see it), Avery has already written a comprehensive test suite
+for this feature. To be deemed acceptable, your code must pass all of these tests, and also have no errors reported by the linter.</p>
+
+<p>You do not need to correct any design flaws that you’ve identified in Avery’s code already (for instance, the naming violations) - when we review your code, we’ll know that this was Avery’s fault, and have them improve their work for next time!</p>
+      <h3 id="rubric-specification-for-part-3">
+        
+        
+          <a href="#rubric-specification-for-part-3" class="anchor-heading" aria-labelledby="rubric-specification-for-part-3"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Rubric Specification for Part 3
+        
+        
+      </h3>
+    
+<p>Part 3 will account for 1/3 of your overall grade on this assignment.</p>
+
+<p>To receive a mark of “Satisfactory” for Part 3, your code submission must:</p>
+<ul>
+  <li>Pass all included automated tests as reported by <code class="language-plaintext highlighter-rouge">npm test</code></li>
+  <li>Follow the design specification outlined above</li>
+  <li>Conform to our <a href="/jon-bell-Jekyll-Canvas-Integration-Test-Class/policies/style/">style guide</a> <em>and</em> have no style warnings or errors as reported by <code class="language-plaintext highlighter-rouge">npm run-script lint</code></li>
+  <li>Have no <code class="language-plaintext highlighter-rouge">@ts-ignore</code> or <code class="language-plaintext highlighter-rouge">eslint-disable</code> annotations in the code that you write (the <code class="language-plaintext highlighter-rouge">@ts-ignore</code> and <code class="language-plaintext highlighter-rouge">eslint-disable</code> lines that are provided in the handout can stay, and GradeScope will automatically tell you if it finds any new ones that you must remove)</li>
+</ul>
+
+<p>To receive a mark of “Meets minimum expectations” for Part 3, your code submission must:</p>
+<ul>
+  <li>Pass all included automated tests as reported by <code class="language-plaintext highlighter-rouge">npm test</code></li>
+  <li>Have no style errors (may have warnings) as reported by <code class="language-plaintext highlighter-rouge">npm run-script lint</code></li>
+  <li>Have no <code class="language-plaintext highlighter-rouge">@ts-ignore</code> or <code class="language-plaintext highlighter-rouge">eslint-disable</code> annotations in the code that you write (the <code class="language-plaintext highlighter-rouge">@ts-ignore</code> and <code class="language-plaintext highlighter-rouge">eslint-disable</code> lines that are provided in the handout can stay, and GradeScope will automatically tell you if it finds any new ones that you must remove)</li>
+</ul>
+
+<p><strong class="label label-yellow">Warning</strong>  Submissions that do not meet the above criteria will receive no credit for Part 3.
+Please note that your code <em>must</em> pass all the automated tests that included with the handout, and <em>must</em> have no 
+errors reported by the style checker that is included with the handout. <strong>Do not wait to test or style check your code until the last minute.</strong></p>
+      <h2 id="submission-instructions">
+        
+        
+          <a href="#submission-instructions" class="anchor-heading" aria-labelledby="submission-instructions"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Submission Instructions
+        
+        
+      </h2>
+    
+<p>Submit your assignment in GradeScope. The easiest way to get into GradeScope the first time is to first
+<a href="https://northeastern.instructure.com/courses/60188">sign into Canvas</a> and then click the link on our course for “GradeScope”. 
+You should then also have the option to create an account on GradeScope (if you don’t already have one) so that you can log in to GradeScope directly.
+Please contact the instructors immediately if you have difficulty accessing the course on GradeScope.</p>
+
+<p>Parts 1 &amp; 2 should be submitted be compiled into a single PDF and submitted to the assignment “Homework 1 (Parts 1 &amp; 2)” on GradeScope.
+Please use GradeScope’s “tagging” interface to associate each of your answers with the questions in the rubric.</p>
+
+<p>To submit Part 3: run the command <code class="language-plaintext highlighter-rouge">npm run-script pack</code> in your project directory, which will create a zip file that is properly
+structured for submission. <strong>Important</strong>: GradeScope only accepts .zip files, <em>not</em> .tgz files - if you run <code class="language-plaintext highlighter-rouge">npm pack</code>, you will get a .tgz file, and it will not be accepted by GradeScope. Please be sure to run <code class="language-plaintext highlighter-rouge">npm run-script pack</code>. Submit this zip file to the assignment “Homework 1 (Part 3)” on GradeScope.
+GradeScope will provide you with feedback on your submission, providing a numeric score of:</p>
+<ul>
+  <li>2 (Satisfactory)</li>
+  <li>1 (Meets minimum expecations)</li>
+  <li>0 (Not passing)</li>
+</ul>
+
+<p>You can also view the complete output from running the tests and linter on GradeScope. If you have any doubts
+about the autograder, please contact the course staff immediately. In particular: if you are not able to reproduce
+and debug test or linter failures on your local machine, <strong>please</strong> ask the TAs for assistance: otherwise you’ll waste
+an immense amount of time waiting for the autograder to complete, when you could get the same feedback in seconds running
+the tests + linter locally.</p>
+
+        
+
+        
+
+        
+        
+
+      </div>
+    </div>
+
+    
+      
+
+      <div class="search-overlay"></div>
+    
+  </div>
+</body>
+</html>
+

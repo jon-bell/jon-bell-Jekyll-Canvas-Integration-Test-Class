@@ -1,0 +1,578 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  
+
+  <link rel="shortcut icon" href="/jon-bell-Jekyll-Canvas-Integration-Test-Class/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="/jon-bell-Jekyll-Canvas-Integration-Test-Class/assets/css/just-the-docs-default.css">
+
+  
+
+  
+    <script type="text/javascript" src="/jon-bell-Jekyll-Canvas-Integration-Test-Class/assets/js/vendor/lunr.min.js"></script>
+  
+  <script type="text/javascript" src="/jon-bell-Jekyll-Canvas-Integration-Test-Class/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Version Control | Canvas/Jekyll Sandbox</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Version Control" />
+<meta name="author" content="Jonathan Bell" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A sandbox Jekyll installation to hook up to Canvas LMS" />
+<meta property="og:description" content="A sandbox Jekyll installation to hook up to Canvas LMS" />
+<link rel="canonical" href="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/tutorials/week2-git" />
+<meta property="og:url" content="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/tutorials/week2-git" />
+<meta property="og:site_name" content="Canvas/Jekyll Sandbox" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Version Control" />
+<script type="application/ld+json">
+{"description":"A sandbox Jekyll installation to hook up to Canvas LMS","url":"https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/tutorials/week2-git","@type":"WebPage","author":{"@type":"Person","name":"Jonathan Bell"},"headline":"Version Control","dateModified":"2021-11-29T21:47:00+00:00","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+</head>
+
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="svg-link" viewBox="0 0 24 24">
+      <title>Link</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+      </svg>
+    </symbol>
+    <symbol id="svg-search" viewBox="0 0 24 24">
+      <title>Search</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+        <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+    </symbol>
+    <symbol id="svg-menu" viewBox="0 0 24 24">
+      <title>Menu</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+        <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </symbol>
+    <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+      <title>Expand</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </symbol>
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+      <title>Document</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+        <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+      </svg>
+    </symbol>
+  </svg>
+
+  <div class="side-bar">
+    <div class="site-header">
+      <a href="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/" class="site-title lh-tight">
+  Canvas/Jekyll Sandbox
+
+</a>
+      <a href="#" id="menu-button" class="site-button">
+        <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+      </a>
+    </div>
+    <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      
+        <ul class="nav-list"><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/modules/" class="nav-list-link">Modules</a><ul class="nav-list "><li class="nav-list-item "><a href="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/modules/week1-overview-design-principles" class="nav-list-link">Week 1 - Overview and Design Principles</a></li><li class="nav-list-item "><a href="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/modules/week2-design-docs-patterns" class="nav-list-link">Week 2 - Design Documentation and Patterns</a></li></ul></li><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/assignments/" class="nav-list-link">Assignments</a><ul class="nav-list "><li class="nav-list-item "><a href="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/assignments/hw1" class="nav-list-link">Assignment 1</a></li><li class="nav-list-item "><a href="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/assignments/hw2" class="nav-list-link">Assignment 2</a></li><li class="nav-list-item "><a href="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/assignments/project-overview" class="nav-list-link">Project Overview</a></li><li class="nav-list-item "><a href="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/assignments/project-deliverable" class="nav-list-link">Project Final Deliverable</a></li></ul></li><li class="nav-list-item"><a href="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/about/" class="nav-list-link">About</a></li><li class="nav-list-item"><a href="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/calendar/" class="nav-list-link">Calendar</a></li><li class="nav-list-item"><a href="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/schedule/" class="nav-list-link">Schedule</a></li></ul>
+
+      
+    </nav>
+    <footer class="site-footer">
+      This site uses <a href="https://github.com/pmarsceill/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+    </footer>
+  </div>
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+      
+        <div class="search">
+          <div class="search-input-wrap">
+            <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search Canvas/Jekyll Sandbox" aria-label="Search Canvas/Jekyll Sandbox" autocomplete="off">
+            <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+          </div>
+          <div id="search-results" class="search-results"></div>
+        </div>
+      
+      
+      
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list">
+              
+                <li class="breadcrumb-nav-list-item"><a href="">Tutorials</a></li>
+              
+              <li class="breadcrumb-nav-list-item"><span>Version Control</span></li>
+            </ol>
+          </nav>
+        
+      
+      <div id="main-content" class="main-content" role="main">
+        
+          <p>This tutorial describes the basic usage of git, a version control system to
+track code changes among yourself and your collaborators.</p>
+
+<p>Contents:</p>
+<ul>
+  <li><a href="#khoury-github">Accessing Khoury Github</a></li>
+  <li><a href="#gitting-started">Gitting Started!</a></li>
+  <li><a href="#basic-commands">Basic Commands</a></li>
+  <li><a href="#branching">Branching</a></li>
+  <li><a href="#merging-and-various-errors">Merging and Various Errors</a></li>
+  <li><a href="#more-advanced-commands-and-fun-stuff">More Advanced Commands and Fun Stuff</a></li>
+</ul>
+
+<p>If you run into any difficulties following any of these steps, please post
+(in a non-private question) on Piazza.</p>
+      <h1 id="accessing-khoury-github">
+        
+        
+          <a href="#accessing-khoury-github" class="anchor-heading" aria-labelledby="accessing-khoury-github"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Accessing Khoury Github
+        
+        
+      </h1>
+    
+
+<p>We recommend using the Khoury Github for this class, as it will simplify the process of creating private repositories. If you would like for your class project to be publicly available, then you should feel free to simply use <a href="https://www.github.com/">github.com</a>. You can login with your Khoury account here:
+<a href="https://github.ccs.neu.edu/login">https://github.ccs.neu.edu/login</a>. If you do not already have a Khoury account,
+you can request one at <a href="https://my.khoury.northeastern.edu/account/apply">https://my.khoury.northeastern.edu/account/apply</a>. Once you do
+this, you will be emailed your account information when it is approved by the
+IT department.</p>
+      <h1 id="gitting-started">
+        
+        
+          <a href="#gitting-started" class="anchor-heading" aria-labelledby="gitting-started"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Gitting Started!
+        
+        
+      </h1>
+    
+
+<p>Git is a version control system that lets you share versions of code remotely
+with other collaborators (or have a remote version you can save and access from
+any computer). The central platform that we will be using is an online service
+called Github (other services also exist, like GitLab). You can create your own
+account online at <a href="https://github.com/">https://github.com/</a>, or use the Khoury Github mentioned above.
+Again, we recommend using the Khoury Github, as this will be what you will be
+using for your final projects.</p>
+
+<p>Once you login, you can create a new repository (which is a another name for
+a git enabled folder) by clicking “New” button in the upper left corner:
+    <img src="./assets/week2-git/new-repo.jpg" alt="image" /></p>
+
+<p>Use the screen to enter a new folder (repo) name. For example, I chose
+/test-repo. Additionally select Public or Private depending on who you
+want to be able to see your project and click add README as well. Then click
+“create repository”.
+    <img src="./assets/week2-git/new-repo-settings.jpg" alt="image" /></p>
+
+<p>This should put you on the webpage of the new repository you just created!
+    <img src="./assets/week2-git/new-repo-shown.jpg" alt="image" /></p>
+
+<p>To get this repository on your local computer, you will do a process called
+cloning. Two steps are needed before you can do this process:</p>
+
+<ol>
+  <li>You need to install git locally on your computer.</li>
+  <li>You need to add an ssh key to your Github page (or you can clone using
+  https). For context, using an ssh key allows you to authenticate your
+  computer with Github automatically using a cryptographic protocol. This
+  process tends to make working with git more smooth when developing your code, as you are automatically authenticated when you start up a new session
+  and don’t have to type in your username and password every time you want to
+  sync the Github repository with your local computer.</li>
+</ol>
+
+<p>For step one,</p>
+<ul>
+  <li>If you are on a linux machine, type <code class="language-plaintext highlighter-rouge">sudo apt-get update</code> and then
+type <code class="language-plaintext highlighter-rouge">sudo apt-get install git</code>.</li>
+  <li>If you are on a mac, type <code class="language-plaintext highlighter-rouge">git --version</code>. If it is already installed, it will print out the current version (and you’re ready to go!). If it is not already installed, you will be prompted with the option to install Git by installing the XCode Command Line Tools - follow the prompts to install XCode Command Line Tools, and when you’re done, you’ll have git (along with several other useful tools)</li>
+  <li>If you are on a windows machine, follow the steps below:
+    <ol>
+      <li>Download the git installer from the git-scm <a href="https://git-scm.com/downloads">website</a>
+        <ul>
+          <li><img src="./assets/week2-git/git-website.JPG" alt="image" /></li>
+        </ul>
+      </li>
+      <li>Run the installer and click yes on the windows prompt to allow installation.</li>
+      <li>Click next on the information page.
+        <ul>
+          <li><img src="./assets/week2-git/git-setup-1.JPG" alt="image" /></li>
+        </ul>
+      </li>
+      <li>Select the destination folder for installation and click next.
+        <ul>
+          <li><img src="./assets/week2-git/git-setup-2.JPG" alt="image" /></li>
+        </ul>
+      </li>
+      <li>Select all components and click next.
+        <ul>
+          <li><img src="./assets/week2-git/git-setup-3.JPG" alt="image" /></li>
+        </ul>
+      </li>
+      <li>Click next on select start menu folder.
+        <ul>
+          <li><img src="./assets/week2-git/git-setup-4.JPG" alt="image" /></li>
+        </ul>
+      </li>
+      <li>Select the editor of choice for Git (I’ve kept the default Vim.JPG) and click next.
+        <ul>
+          <li><img src="./assets/week2-git/git-setup-5.JPG" alt="image" /></li>
+        </ul>
+      </li>
+      <li>Select “Let git decide” for the default branch and click next.
+        <ul>
+          <li><img src="./assets/week2-git/git-setup-6.JPG" alt="image" /></li>
+        </ul>
+      </li>
+      <li>Select “Git from the command line and also 3rd party software” and click next.
+        <ul>
+          <li><img src="./assets/week2-git/git-setup-7.JPG" alt="image" /></li>
+        </ul>
+      </li>
+      <li>Select “Use OpenSSL library” and click next.
+        <ul>
+          <li><img src="./assets/week2-git/git-setup-8.JPG" alt="image" /></li>
+        </ul>
+      </li>
+      <li>Select “Checkout windows-style, commit unix-style line endings” and click next.
+        <ul>
+          <li><img src="./assets/week2-git/git-setup-9.JPG" alt="image" /></li>
+        </ul>
+      </li>
+      <li>Select “Use MinTTY” and click next.
+        <ul>
+          <li><img src="./assets/week2-git/git-setup-10.JPG" alt="image" /></li>
+        </ul>
+      </li>
+      <li>Select “default” and click next.
+        <ul>
+          <li><img src="./assets/week2-git/git-setup-11.JPG" alt="image" /></li>
+        </ul>
+      </li>
+      <li>Select “Git Credential Manager Core” and click next.
+        <ul>
+          <li><img src="./assets/week2-git/git-setup-12.JPG" alt="image" /></li>
+        </ul>
+      </li>
+      <li>Enable both options and click next.
+        <ul>
+          <li><img src="./assets/week2-git/git-setup-13.JPG" alt="image" /></li>
+        </ul>
+      </li>
+      <li>Select “Enable support for experimental consoles” and click Install.
+        <ul>
+          <li><img src="./assets/week2-git/git-setup-14.JPG" alt="image" /></li>
+        </ul>
+      </li>
+      <li>Git has now been installed. Click finish to exit
+        <ul>
+          <li><img src="./assets/week2-git/git-setup-15.JPG" alt="image" /></li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li>To verify the installation of git:
+    <ol>
+      <li>Open a terminal (cmd/powershell)</li>
+      <li>Run the command <code class="language-plaintext highlighter-rouge">*git --version*</code></li>
+      <li>You should see the version of git installed
+        <ul>
+          <li><img src="./assets/week2-git/git-setup-verify.JPG" alt="image" /></li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<p>Setting your SSH key on Windows:</p>
+<ol>
+  <li>Open git bash</li>
+  <li>Run the command: <code class="language-plaintext highlighter-rouge">*ssh-keygen*</code>
+    <ul>
+      <li>Hit enter for all options and an RSA key-pair will be generated!</li>
+      <li>However, it is a good idea to set a passphrase.</li>
+      <li><img src="./assets/week2-git/ssh-keygen.JPG" alt="image" /></li>
+    </ul>
+  </li>
+</ol>
+
+<p>After you install git, navigate to your home directory and type <code class="language-plaintext highlighter-rouge">ssh-keygen</code>.
+Press enter for all options, and optionally enter a password when prompted. It
+is less secure to not enter a password, but many people opt not to have one
+when working on a personal computer to make their workflow easier. Next, on
+the Github website, access your account settings, by clicking on the little
+icon on the top right and selecting <code class="language-plaintext highlighter-rouge">Settings</code> from the drop-down menu.
+    <img src="./assets/week2-git/github-settings.jpg" alt="image" /></p>
+
+<p>Click on the <code class="language-plaintext highlighter-rouge">SSH and GPG keys</code> tab and click <code class="language-plaintext highlighter-rouge">New SSH-key</code>. Navigate to your
+home directory and type <code class="language-plaintext highlighter-rouge">cat .ssh/id_rsa.pub</code>. This is your public key, make
+sure not to access <code class="language-plaintext highlighter-rouge">.ssh/id_rsa</code> instead, as this is your private key. Copy
+and paste this public key into the box, give it a recognizable title (something
+that you would recognize as your computer) and click <code class="language-plaintext highlighter-rouge">Add SSH key</code>.
+    <img src="./assets/week2-git/github-ssh-key.jpg" alt="image" /></p>
+
+<p>After you add your ssh key, you are ready to clone the repository locally!
+Navigate back to your repo page and locate the green <code class="language-plaintext highlighter-rouge">Code</code> button with an
+arrow. Make sure it says <code class="language-plaintext highlighter-rouge">Clone with SSH</code> and click the clipboard to copy
+the location.
+    <img src="./assets/week2-git/git-clone.jpg" alt="image" /></p>
+
+<p>Navigate back to your terminal and type
+<code class="language-plaintext highlighter-rouge">git clone [copied location]</code>. Hit enter to accept the SSH prompt (this will
+only happen the first time you access a repo). This will clone your repo
+locally for you to edit! If you encounter an error saying you do not have
+access rights, you have messed something up in adding your ssh key. Retry
+the steps for generating and adding the public key to your Github. Further
+information for troubleshooting and/or setting up an ssh key on other systems
+as needed can be found at: https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh.</p>
+      <h1 id="basic-commands">
+        
+        
+          <a href="#basic-commands" class="anchor-heading" aria-labelledby="basic-commands"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Basic Commands
+        
+        
+      </h1>
+    
+
+<p>There are a few basic command you need to know to use git effectively.
+The basic workflow of working with git is when you resume working on a project,
+you type <code class="language-plaintext highlighter-rouge">git pull</code> in the github enabled folder. This will sync your local
+branch with the remote server (i.e. the <code class="language-plaintext highlighter-rouge">Master</code> branch,
+implicitly selected or explicitly  denoted <code class="language-plaintext highlighter-rouge">origin master</code>).
+Then you work on your code saving normally. When you are done (or want to
+create a checkpoint), you first add your code, commit it (with a message),
+and then push it. To check on the status of your commits, you can type
+<code class="language-plaintext highlighter-rouge">git status</code>. This command will show you what files you have edited locally
+that are not up to date with the master branch in red. To add them, type
+<code class="language-plaintext highlighter-rouge">git add [insert name of file]</code> for each file to add. Of note, you can tab
+complete the file name and use regular expressions to add more than one file.
+After you add a file, it will turn green in the <code class="language-plaintext highlighter-rouge">git status</code> menu.
+Then, you type <code class="language-plaintext highlighter-rouge">git commit -m "[Some explanatory message]"</code>. Commits are how
+git tracks versions of the code. Finally, you type <code class="language-plaintext highlighter-rouge">git push</code> and this should
+update the master branch (seen on the website) with your code changes.</p>
+
+<p>For review, when working on code you:</p>
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">git pull</code></li>
+  <li>Work on your code</li>
+  <li><code class="language-plaintext highlighter-rouge">git add [file name]</code></li>
+  <li><code class="language-plaintext highlighter-rouge">git commit -m "[Descriptive message]"</code></li>
+  <li><code class="language-plaintext highlighter-rouge">git push</code></li>
+</ol>
+      <h1 id="branching">
+        
+        
+          <a href="#branching" class="anchor-heading" aria-labelledby="branching"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Branching
+        
+        
+      </h1>
+    
+
+<p>The above workflow is great when you are the only developer on a project.
+Now we will discuss an important concept when working with other developers:
+branching. When adding code to a shared code-base, it is good practice to create
+a branch to work on locally, using the flow above, and when you want to combine
+it with the existing code (called merging), to open what is called a
+<code class="language-plaintext highlighter-rouge">Pull Request</code>. This allows for code review (as someone else can approve the
+request), helps prevent nasty merging issues (as you can see how the branches)
+will merge before accepting the request, and keeps feature development
+separate from each other for good development modularity. To get an intuitive
+idea for what is going on, review this short graphic from github:
+https://guides.github.com/introduction/flow/.</p>
+
+<p>To create a branch, you can type <code class="language-plaintext highlighter-rouge">git checkout -b [name of new branch]</code>. This
+is shorthand for <code class="language-plaintext highlighter-rouge">git branch [name of new branch]</code> followed by
+<code class="language-plaintext highlighter-rouge">git checkout [branch name]</code>. To see all the branches for the repo, type
+<code class="language-plaintext highlighter-rouge">git branch</code> with no arguments. To switch between branches, type
+<code class="language-plaintext highlighter-rouge">git checkout [branch name]</code>. When you are on a branch, you can pull, add,
+commit, and push like a normal workflow above. When you are ready to merge
+with the master branch, you can either open a pull request or (and this is
+not recommended because it can cause merge conflicts that are difficult to
+resolve and can mess with other people’s code) merge directly with the master
+branch. To open a pull request, navigate to the repo on the github website and
+select your branch from the branch drop down menu (on top of where the files
+are listed on the left side; master will likely be selected as default).
+Above the files should say “This branch is x commits ahead or behind master”.
+To the left of that select pull request.
+    <img src="./assets/week2-git/git-pull-request.jpg" alt="image" /></p>
+
+<p>Add an optional comment and select
+<code class="language-plaintext highlighter-rouge">Create pull request</code>. Github will check for any merge conflicts, and if there
+exist none, a collaborator (we suggest someone else in your group) can click
+<code class="language-plaintext highlighter-rouge">Merge pull request</code> and then <code class="language-plaintext highlighter-rouge">Confirm merge</code> to merge into the master branch.
+After a branch is merged, you may wish to delete the branch. You can either do
+this in two ways. First, by selecting the <code class="language-plaintext highlighter-rouge">[Number] branches</code> next to the
+branch pull down menu for the repo and then clicking the trash can next to the
+branch to delete. Second, you can type <code class="language-plaintext highlighter-rouge">git branch -d [branch name]</code> into a
+terminal.</p>
+
+<p>Github also lets you work entirely with branches from the website.
+This short guide shows how: https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-and-deleting-branches-within-your-repository.</p>
+
+<p>To summarize:</p>
+<ul>
+  <li>Create a branch with <code class="language-plaintext highlighter-rouge">git checkout -b [name of new branch]</code>.</li>
+  <li>Switch between branches with <code class="language-plaintext highlighter-rouge">git checkout [name of branch]</code>.</li>
+  <li>See all open branches with <code class="language-plaintext highlighter-rouge">git branch</code>.</li>
+  <li>Open and merge pull requests on the github website.</li>
+  <li>Delete a branch with <code class="language-plaintext highlighter-rouge">git branch -d [name of branch]</code>.</li>
+</ul>
+      <h1 id="merging-and-various-errors">
+        
+        
+          <a href="#merging-and-various-errors" class="anchor-heading" aria-labelledby="merging-and-various-errors"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Merging and Various Errors
+        
+        
+      </h1>
+    
+
+<p>The most common error with git is a merge error. This occurs when you try to
+push something to a branch and the code you edited does not agree with the same
+code in some other commit already committed to a branch. The best way to fix
+merge errors is to take precautionary steps to avoid them. Best practices for
+doing this have already been mentioned: <code class="language-plaintext highlighter-rouge">git pull</code> when resuming work and
+do not try to merge directly with master, open a pull request. However,
+merge conflicts are bound to happen, and they, quite frankly are a headache
+sometimes. We can try to help you with these, but here we provide the steps
+you should take first to fix them.</p>
+
+<p>To see where the conflicts lie (after you git commit and git complains there
+are merge conflicts), just type <code class="language-plaintext highlighter-rouge">git status</code>. This will tell you the files
+that are in conflict. To manually fix the conflict, open the file. The git
+merging system will have left you with some information on the differences
+between the files that cause the conflict. We highly recommend that if you
+do not use the Atom text editor normally that you download it solely for this
+purpose. Atom is a popular IDE released by github, so it provides highlighting
+for merge conflicts. You can download it on Linux by typing <code class="language-plaintext highlighter-rouge">sudo apt-get install atom</code>,
+on Mac by typing <code class="language-plaintext highlighter-rouge">brew install atom</code>. The git merge tool will add something to a file such as:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+console.log("Help! I have a merge conflict!");
+=======
+console.log("I have a merge conflict! Help!");
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; test_branch
+</code></pre></div></div>
+
+<p>The left arrows followed by HEAD indicate the code in the branch you are trying
+to merge with (in this case main). The equal signs denote the separation between
+the two versions, and the code that follows them until the right arrow is the
+code in the branch you are trying to merge (in this case, denoted by test_branch after the right arrows). To fix this merge manually, pick which version you
+want, delete the code from the other branch, and delete the left arrows, “HEAD”,
+the right arrows, and the name of the merging branch (i.e. “test_branch”).
+Then save the file, re-add it to mark it as fixed, and then commit and push
+as normal.</p>
+
+<p>We recommend Atom because this process is visually highlighted in the file
+as shown:
+    <img src="./assets/week2-git/atom-merge-example.jpg" alt="image" /></p>
+
+<p>You can just click on the “Use me” button for whichever version you want to
+use, which simplifies the process greatly.</p>
+
+<p>For windows, we recommend using TortoiseGit as the mergetool.</p>
+<ol>
+  <li>Download the installer for TortoiseGit from the official <a href="https://tortoisegit.org/">website</a>.
+    <ul>
+      <li><img src="./assets/week2-git/tortoise-git.JPG" alt="image" /></li>
+    </ul>
+  </li>
+  <li>Run the installer</li>
+  <li>Select the installation directory and click next on all windows to complete the installation.</li>
+  <li>When attempting to merge conflicts from the CLI, tortoisemerge should be the default option now.
+      <h1 id="more-advanced-commands-and-fun-stuff">
+        
+        
+          <a href="#more-advanced-commands-and-fun-stuff" class="anchor-heading" aria-labelledby="more-advanced-commands-and-fun-stuff"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> More Advanced Commands and Fun Stuff
+        
+        
+      </h1>
+    
+  </li>
+</ol>
+
+<ul>
+  <li>
+    <p>One of the best shortcuts is using flags for <code class="language-plaintext highlighter-rouge">git commit</code>. In particular, if
+you wish to add all the changed files that are currently being tracked (i.e.
+already exist in the main branch), you can use the flag <code class="language-plaintext highlighter-rouge">-a</code> when committing.
+This equates to typing <code class="language-plaintext highlighter-rouge">git commit -am "[Descriptive Message]"</code> instead of
+<code class="language-plaintext highlighter-rouge">git add</code>ing each file and then committing.</p>
+  </li>
+  <li>
+    <p>Sometimes you just mess up your code badly and you want to revert to the
+previous commit that was working. To do this, use the <code class="language-plaintext highlighter-rouge">git stash</code> command.
+First, type <code class="language-plaintext highlighter-rouge">git stash</code>. This command reverts you back to your previous commit
+and actually saves your changes locally in a stash (i.e you can get them back).
+However, in our example, we just want to dump the bad code, so after <code class="language-plaintext highlighter-rouge">git stash</code>
+type <code class="language-plaintext highlighter-rouge">git stash drop</code>. Now your bad code breaking changes are gone. Poof!</p>
+  </li>
+  <li>
+    <p>Sometimes you might have already pushed your bad code! In order to “undo”
+this pushed commit, use <code class="language-plaintext highlighter-rouge">git revert</code>. Be warned though, this is entering into
+the trickier parts of git, and it could really really mess up your code if
+you aren’t careful. Find the hash of your git commit you want to undo on the
+web page commit history. Conveniently, there is a copy button for this hash
+for each commit. Alternatively, you can type <code class="language-plaintext highlighter-rouge">git log</code> and it will show the
+commit history (be warned if this is long, you might want to add flags as to
+not have to continuously press enter to scroll through it).
+Then navigate to your terminal and type <code class="language-plaintext highlighter-rouge">git revert [copied hash]</code>. This is a
+separate commit that undoes the other commit, push this commit, and your bad
+code disappears (and has a traceable history associated with the undo in the
+commit history). Again, this is a warning that you really could mess up your
+code by doing this, and we may not be able to help you fix it. To be on the
+safer side, only revert your last commit when you realize you pushed bad or
+broken code.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Forking</code> is a form of branching in which you create a local copy of an
+existing repo (and use this copy as if it is your own), which can later be
+merged like a normal branch using a pull request. This type of process is
+usually used in large, open-source projects when developers add features, but
+you can use it too! For example, these tutorials are developed on a local fork
+that gets merged with the website master repo when we finish a new one!</p>
+  </li>
+  <li>
+    <p>Github supports emojis! To use one, consult the list here: https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md. Select your favorite and add
+the id of the emoji in question to your git commit message. A personal favorite
+of one of the authors is <code class="language-plaintext highlighter-rouge">":space_invader:"</code>. These are fun to add to any
+commit, but in particular a <code class="language-plaintext highlighter-rouge">git commit -am "Done!! :space_invader:"</code> for when
+you finish a programming assignment is always fun :)</p>
+  </li>
+</ul>
+
+        
+
+        
+
+        
+        
+
+      </div>
+    </div>
+
+    
+      
+
+      <div class="search-overlay"></div>
+    
+  </div>
+</body>
+</html>
+

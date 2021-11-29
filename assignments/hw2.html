@@ -1,0 +1,557 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  
+
+  <link rel="shortcut icon" href="/jon-bell-Jekyll-Canvas-Integration-Test-Class/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="/jon-bell-Jekyll-Canvas-Integration-Test-Class/assets/css/just-the-docs-default.css">
+
+  
+
+  
+    <script type="text/javascript" src="/jon-bell-Jekyll-Canvas-Integration-Test-Class/assets/js/vendor/lunr.min.js"></script>
+  
+  <script type="text/javascript" src="/jon-bell-Jekyll-Canvas-Integration-Test-Class/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Assignment 2 | Canvas/Jekyll Sandbox</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Assignment 2" />
+<meta name="author" content="Jonathan Bell" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A sandbox Jekyll installation to hook up to Canvas LMS" />
+<meta property="og:description" content="A sandbox Jekyll installation to hook up to Canvas LMS" />
+<link rel="canonical" href="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/assignments/hw2" />
+<meta property="og:url" content="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/assignments/hw2" />
+<meta property="og:site_name" content="Canvas/Jekyll Sandbox" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Assignment 2" />
+<script type="application/ld+json">
+{"description":"A sandbox Jekyll installation to hook up to Canvas LMS","url":"https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/assignments/hw2","@type":"WebPage","author":{"@type":"Person","name":"Jonathan Bell"},"headline":"Assignment 2","dateModified":"2021-11-29T21:47:00+00:00","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+</head>
+
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="svg-link" viewBox="0 0 24 24">
+      <title>Link</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+      </svg>
+    </symbol>
+    <symbol id="svg-search" viewBox="0 0 24 24">
+      <title>Search</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+        <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+    </symbol>
+    <symbol id="svg-menu" viewBox="0 0 24 24">
+      <title>Menu</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+        <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </symbol>
+    <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+      <title>Expand</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </symbol>
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+      <title>Document</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+        <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+      </svg>
+    </symbol>
+  </svg>
+
+  <div class="side-bar">
+    <div class="site-header">
+      <a href="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/" class="site-title lh-tight">
+  Canvas/Jekyll Sandbox
+
+</a>
+      <a href="#" id="menu-button" class="site-button">
+        <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+      </a>
+    </div>
+    <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      
+        <ul class="nav-list"><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/modules/" class="nav-list-link">Modules</a><ul class="nav-list "><li class="nav-list-item "><a href="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/modules/week1-overview-design-principles" class="nav-list-link">Week 1 - Overview and Design Principles</a></li><li class="nav-list-item "><a href="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/modules/week2-design-docs-patterns" class="nav-list-link">Week 2 - Design Documentation and Patterns</a></li></ul></li><li class="nav-list-item active"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/assignments/" class="nav-list-link">Assignments</a><ul class="nav-list "><li class="nav-list-item "><a href="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/assignments/hw1" class="nav-list-link">Assignment 1</a></li><li class="nav-list-item  active"><a href="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/assignments/hw2" class="nav-list-link active">Assignment 2</a></li><li class="nav-list-item "><a href="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/assignments/project-overview" class="nav-list-link">Project Overview</a></li><li class="nav-list-item "><a href="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/assignments/project-deliverable" class="nav-list-link">Project Final Deliverable</a></li></ul></li><li class="nav-list-item"><a href="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/about/" class="nav-list-link">About</a></li><li class="nav-list-item"><a href="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/calendar/" class="nav-list-link">Calendar</a></li><li class="nav-list-item"><a href="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/schedule/" class="nav-list-link">Schedule</a></li></ul>
+
+      
+    </nav>
+    <footer class="site-footer">
+      This site uses <a href="https://github.com/pmarsceill/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+    </footer>
+  </div>
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+      
+        <div class="search">
+          <div class="search-input-wrap">
+            <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search Canvas/Jekyll Sandbox" aria-label="Search Canvas/Jekyll Sandbox" autocomplete="off">
+            <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+          </div>
+          <div id="search-results" class="search-results"></div>
+        </div>
+      
+      
+      
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list">
+              
+                <li class="breadcrumb-nav-list-item"><a href="https://jon-bell.github.io/jon-bell-Jekyll-Canvas-Integration-Test-Class/assignments/">Assignments</a></li>
+              
+              <li class="breadcrumb-nav-list-item"><span>Assignment 2</span></li>
+            </ol>
+          </nav>
+        
+      
+      <div id="main-content" class="main-content" role="main">
+        
+          <h2 class="fs-6" id="assignment-2">
+        
+        
+          <a href="#assignment-2" class="anchor-heading" aria-labelledby="assignment-2"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 
+    
+    Assignment 2: API Implementation
+    
+    <strong class="label label-red">Due Friday Feb 19, 10:00pm EST</strong>
+
+        
+        
+      </h2>
+    
+
+
+<p>We’ve got some good news, and some bad news. The good news is that thanks to your design documentation efforts, we now understand Avery’s mess of code much better.
+The bad news is that we’re going to need you to implement even more functionality to really support multiple rooms in Covey.Town’s backend server.
+In design review, we found the following key issues that weren’t addressed by the spec that we gave you in Assignment 1:</p>
+<ul>
+  <li>There is no way to list which rooms are available for users to join</li>
+  <li>There is no way to tell if a user is joining a room that already existed (perhaps one where they agreed to meet their friends in), or if the room was created on the spot (perhaps they made a typo in the room name)</li>
+  <li>Multiple users might want to use the same “friendly name” for their room, like “Coffee Break” - but the design spec only allows for one room with each name.</li>
+</ul>
+
+<p>In light of these concerns, we’ve sketched out the design for a new, RESTful API for the Covey.Town Room Service. This API consists of two resources:</p>
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">/rooms</code> a resource that represents the different rooms available in Covey.Town</li>
+  <li><code class="language-plaintext highlighter-rouge">/sessions</code> a resource that represents a player’s session in a given room. When a player joins a room, they start a new session.</li>
+</ol>
+
+<p>By separating the resource of <code class="language-plaintext highlighter-rouge">rooms</code> and <code class="language-plaintext highlighter-rouge">sessions</code>, we can de-couple the process of joining a room (acquiring a session in that room) and creating the room.
+We’re also going to add three new important properties to our <code class="language-plaintext highlighter-rouge">room</code> resource (and, correspondingly, to our <code class="language-plaintext highlighter-rouge">CoveyRoomController</code> class):
+<code class="language-plaintext highlighter-rouge">friendlyName</code> (a non-unique name that describes the room), <code class="language-plaintext highlighter-rouge">isPubliclyListed</code> (a boolean value that determines if the room should be listed in the public index of rooms) and
+<code class="language-plaintext highlighter-rouge">roomUpdatePassword</code> (a secret string that is generated by the server and returned to the client that creates the room, allowing the room’s <code class="language-plaintext highlighter-rouge">friendlyName</code> and <code class="language-plaintext highlighter-rouge">isPubliclyListed</code> fields to be updated in the future).</p>
+
+<p>The API will support the following operations:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">POST /rooms</code> - Create a new room. Requires a request body containing the properties <code class="language-plaintext highlighter-rouge">friendlyName: string</code> and <code class="language-plaintext highlighter-rouge">isPubliclyListed: boolean</code>. Returns a JSON response body of format <code class="language-plaintext highlighter-rouge">{coveyRoomID: string, coveyRoomPassword: string}</code></li>
+  <li><code class="language-plaintext highlighter-rouge">PATCH /rooms/:roomID</code> - Update the room with a given <code class="language-plaintext highlighter-rouge">coveyRoomID</code>. Requires a request body containing the properties <code class="language-plaintext highlighter-rouge">coveyRoomID: string, coveyRoomPassword: string</code>, and the data being changed: one or both of <code class="language-plaintext highlighter-rouge">friendlyName: string</code>, <code class="language-plaintext highlighter-rouge">isPubliclyListed: boolean</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">GET /rooms</code> - List all rooms that have <code class="language-plaintext highlighter-rouge">isPubliclyListed === true</code>. Returns a JSON response body of format <code class="language-plaintext highlighter-rouge">{rooms: {friendlyName: string, coveyRoomID: string}[]}</code></li>
+  <li><code class="language-plaintext highlighter-rouge">DELETE /rooms/:roomID/:coveyRoomPassword</code> - Delete a room with a given <code class="language-plaintext highlighter-rouge">coveyRoomID</code> if it is protected by the room update password <code class="language-plaintext highlighter-rouge">coveyRoomPassword</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">POST /sessions</code> - Create a new session. (This is comparable to the old <code class="language-plaintext highlighter-rouge">roomJoinRequest</code> from HW1).</li>
+</ul>
+
+<p>Your assignment will be graded following the rubric embedded in this document, which will consist of the marks “Satisfactory,” “Meets Minimum Expectations,” and “Not Acceptable.”
+Based on past experiences, we project that this assignment could take you up to 14 hours (depending on your prior preparation).
+We encourage you to start early so that you can post questions on Piazza, make the most use of our TAs’ tutorials, and
+ attend office hours as necessary in order to ensure that you can reach Satisfactory marks across the board.</p>
+
+<p>The objectives for this assignment, are to:</p>
+<ul>
+  <li>Expand an existing API following the coding conventions set out in an existing codebase</li>
+  <li>Practice writing asynchronous code, including making HTTP requests</li>
+  <li>Read the documentation for a third-party library to learn how to call it</li>
+  <li>Relate architectural design principles to the design of a real codebase</li>
+</ul>
+
+<p>Parts 1 and 2 are coding tasks, and you will implement them by modifying the handout code that we provide with this assignment.
+Part 3 of this assignment should be completed in a text editor or word processor, and submitted as a PDF.</p>
+
+<p><strong>This is an individual assignment.</strong></p>
+
+<p>Please post any questions about this assignment on Piazza.</p>
+      <h3 id="change-log">
+        
+        
+          <a href="#change-log" class="anchor-heading" aria-labelledby="change-log"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Change Log
+        
+        
+      </h3>
+    
+<ul>
+  <li>2/5: Initial Release</li>
+  <li>2/10: Added hint in part 2 about response types - JSB</li>
+  <li>2/11: Added warning to not hardcode <code class="language-plaintext highlighter-rouge">http://localhost:8081</code> in the API client - JSB</li>
+</ul>
+      <h2 id="part-1">
+        
+        
+          <a href="#part-1" class="anchor-heading" aria-labelledby="part-1"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Part 1:
+        
+        
+      </h2>
+    
+<p>Avery has provided you with a sketch of the API that you should be implementing, and quite helpfully, has provided type definitions
+for the various API calls.
+Start by <a href="/jon-bell-Jekyll-Canvas-Integration-Test-Class/assignments/hw2-handout.zip">downloading this starter code</a>
+Extract this archive, run <code class="language-plaintext highlighter-rouge">npm install</code> in it to fetch all of the dependencies, and open the code in your IDE
+to start to get a handle on what Avery did here.
+To help you set up a local development environment for this class, we’ve prepared a tutorial for <a href="/jon-bell-Jekyll-Canvas-Integration-Test-Class/tutorials/week1-getting-started">setting up a development environment with NodeJS, VSCode and TypeScript</a>.</p>
+      <h3 id="updating-the-coveyroomsstore">
+        
+        
+          <a href="#updating-the-coveyroomsstore" class="anchor-heading" aria-labelledby="updating-the-coveyroomsstore"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Updating the CoveyRoomsStore
+        
+        
+      </h3>
+    
+<p>Avery has already modified the <code class="language-plaintext highlighter-rouge">CoveyRoomController</code> to generate and keep track of the ID and update password for each room.
+Avery is using the <a href="https://www.npmjs.com/package/nanoid">nanoid</a> library to generate random strings for both the ID and password, which should
+ensure that IDs are unique, and that passwords are hard to guess. These values are automatically generated in the constructor of <code class="language-plaintext highlighter-rouge">CoveyRoomController</code>,
+so you won’t need to worry about this aspect of the design.
+Avery has also stubbed out
+functions in <code class="language-plaintext highlighter-rouge">CoveyRoomStore</code> for creating, updating, listing and deleting rooms. You should begin your implementation with these functions in <code class="language-plaintext highlighter-rouge">CoveyRoomStore.ts</code>:</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="cm">/**
+   * Returns a list of all of the publicly-visible rooms, representing each room as
+   * {friendlyName: string, coveyRoomID: string}
+   */</span>
+  <span class="nx">getRooms</span><span class="p">():</span> <span class="nx">CoveyRoomList</span>
+
+ <span class="cm">/**
+   * Creates a new room and returns the room's `CoveyRoomController`.
+   *
+   * @param friendlyName
+   * @param isPubliclyListed
+   */</span>
+  <span class="nx">createRoom</span><span class="p">(</span><span class="nx">friendlyName</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">isPubliclyListed</span><span class="p">:</span> <span class="nx">boolean</span><span class="p">):</span> <span class="nx">CoveyRoomController</span>
+
+  <span class="cm">/**
+   * Updates the friendlyName and/or public visibility of a room if there is a room that has the
+   * specified ID and password. Only updates fields that are passed (note friendlyName or makePublic
+   * might be undefined). Returns true if a room was found matching the ID and password, or false
+   * otherwise. If there are no updates (e.g. friendlyName === undefined &amp;&amp; makePublic === undefined),
+   * but the room ID and password are valid, this method should still return true.
+   *
+   * @param coveyRoomID
+   * @param coveyRoomPassword
+   * @param friendlyName
+   * @param makePublic
+   */</span>
+  <span class="nx">updateRoom</span><span class="p">(</span><span class="nx">coveyRoomID</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">coveyRoomPassword</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">friendlyName</span><span class="p">?:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">makePublic</span><span class="p">?:</span> <span class="nx">boolean</span><span class="p">):</span> <span class="nx">boolean</span>
+
+  <span class="cm">/**
+   * Deletes the room specified by ID. Only deletes the room if the password specified as a
+   * parameter here matches the password stored by the matching CoveyRoomController. This method
+   * should both remove the room from the RoomStore's listing of rooms, and also disconnect
+   * any players from the room (by calling CoveyRoomController.disconnectAllPlayers).
+   *
+   * Returns true if the room was found, password matched, and the room was deleted. Otherwise
+   * returns false.
+   *
+   * @param coveyRoomID
+   * @param coveyRoomPassword
+   */</span>
+  <span class="nx">deleteRoom</span><span class="p">(</span><span class="nx">coveyRoomID</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">coveyRoomPassword</span><span class="p">:</span> <span class="kr">string</span><span class="p">):</span> <span class="nx">boolean</span>
+</code></pre></div></div>
+
+<p>Avery has included a thorough test suite for <code class="language-plaintext highlighter-rouge">CoveyRoomsStore</code> (<code class="language-plaintext highlighter-rouge">CoveyRoomsStore.test.ts</code>), which you can run for yourself. Once you believe that you have implemented these functions correctly,
+check your progress by running <code class="language-plaintext highlighter-rouge">npm test</code>.
+You should make sure that you pass all of these tests before your proceed.</p>
+      <h3 id="defining-the-rest-api">
+        
+        
+          <a href="#defining-the-rest-api" class="anchor-heading" aria-labelledby="defining-the-rest-api"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Defining the REST API
+        
+        
+      </h3>
+    
+<p>As in your onboarding assignment, the file <code class="language-plaintext highlighter-rouge">src/router/room.ts</code> contains all of the HTTP routes for the <code class="language-plaintext highlighter-rouge">/rooms</code> and <code class="language-plaintext highlighter-rouge">/sessions</code> APIs.
+Avery has added routes to the express server for all of the new API functions listed above <em>except</em> for <code class="language-plaintext highlighter-rouge">DELETE /rooms</code>.
+Add a route to <code class="language-plaintext highlighter-rouge">room.ts</code>, connecting from <code class="language-plaintext highlighter-rouge">DELETE /rooms/:roomID/:roomPassword</code> to the <code class="language-plaintext highlighter-rouge">roomDeleteHandler</code>.
+Follow the pattern that Avery used in the other request handlers for calling the handler, checking for errors, and sending the response back to the client.</p>
+      <h3 id="implementing-the-request-handlers">
+        
+        
+          <a href="#implementing-the-request-handlers" class="anchor-heading" aria-labelledby="implementing-the-request-handlers"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Implementing the request handlers
+        
+        
+      </h3>
+    
+<p>As in your onboarding assignment, the file <code class="language-plaintext highlighter-rouge">src/requestHandlers/CoveyRoomRequestHandlers.ts</code> contains the request handlers that process each client’s request and format a response.
+To help future-proof the API and make it easier to pass metadata back to the client, each request handler now returns a <code class="language-plaintext highlighter-rouge">ResponseEnvelope</code>, which consists of a boolean field (<code class="language-plaintext highlighter-rouge">isOK</code>), an optional status message (<code class="language-plaintext highlighter-rouge">message</code>), and an optional response payload (<code class="language-plaintext highlighter-rouge">response</code>) .
+When you implement your REST client, you’ll find that using a standard approach to pass errors like this is quite useful.</p>
+
+<p>There are four handlers that are entirely unimplemented. Your task is to implement all four of these handlers following the specification, using the existing <code class="language-plaintext highlighter-rouge">roomJoinHandler</code> as an example.</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * List all of the rooms that are set to "publicly visible"
+ *
+ * The `isOK` field on the envelope must be set to `true` in all cases
+ * (this function can not return an error)
+ *
+ * @see CoveyRoomsStore.getRooms - which will return the list of rooms
+ *
+ */</span>
+<span class="k">export</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">roomListHandler</span><span class="p">():</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">ResponseEnvelope</span><span class="o">&lt;</span><span class="nx">RoomListResponse</span><span class="o">&gt;&gt;</span>
+
+<span class="cm">/**
+ * Create a new room and returns its ID and password.
+ *
+ * Sets the `isOK` field on the envelope to `false` if the `friendlyName` specified is empty
+ * (a 0-length string), and also sets the `message` envelope field with a descriptive error.
+ *
+ * Otherwise, sets the `isOK` field on the envelope to `true` if the request succeeds, and returns
+ * the room information inside of the response envelope.
+ *
+ * @see CoveyRoomsStore.createRoom - which will create and track the new room
+ *
+ * @param requestData the "friendly name" to assign this room, and its publicly visibility
+ *
+ */</span>
+<span class="k">export</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">roomCreateHandler</span><span class="p">(</span><span class="nx">requestData</span><span class="p">:</span> <span class="nx">RoomCreateRequest</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">ResponseEnvelope</span><span class="o">&lt;</span><span class="nx">RoomCreateResponse</span><span class="o">&gt;&gt;</span>
+
+<span class="cm">/**
+ * Deletes a room.
+ *
+ * Sets the `isOK` field on the envelope to `true` if the room exists, password matches, and room
+ * is deleted. Sets the `isOK` field on the envelope to `false` and the `message` field to "Invalid
+ * Request" if the room does not exist, or password does not match.
+ *
+ *
+ * Does not return any other data inside of the envelope
+ *
+ * @see CoveyRoomsStore.deleteRoom - which will delete the room from its store
+ *
+ * @param requestData the requested room ID to delete and the password specified by the client
+ */</span>
+<span class="k">export</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">roomDeleteHandler</span><span class="p">(</span><span class="nx">requestData</span><span class="p">:</span> <span class="nx">RoomDeleteRequest</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">ResponseEnvelope</span><span class="o">&lt;</span><span class="nb">Record</span><span class="o">&lt;</span><span class="kr">string</span><span class="p">,</span> <span class="kc">null</span><span class="o">&gt;&gt;&gt;</span> 
+
+<span class="cm">/**
+ * Updates a room's friendlyName and/or public visibility.
+ *
+ * Rejects the request (by setting `isOK` field on the envelope to `false`) if the request is to
+ * update the `friendlyName` to an empty string.
+ *
+ * Sets the `isOK` field on the envelope to `true` if the room exists, password matches, and room
+ * is updated. Sets the `isOK` field on the envelope to `false` and the `message` field to "Invalid
+ * Request" if the room does not exist, or password does not match.
+ *
+ * @see CoveyRoomsStore.updateRoom - which will update the room's data
+ *
+ * @param requestData the update request. This handler should only update fields of the room only
+ *   if the password supplied in the request matches the password on record.
+ */</span>
+<span class="k">export</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">roomUpdateHandler</span><span class="p">(</span><span class="nx">requestData</span><span class="p">:</span> <span class="nx">RoomUpdateRequest</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">ResponseEnvelope</span><span class="o">&lt;</span><span class="nb">Record</span><span class="o">&lt;</span><span class="kr">string</span><span class="p">,</span> <span class="kc">null</span><span class="o">&gt;&gt;&gt;</span> 
+
+</code></pre></div></div>
+
+<p>You can test your request handlers in a few ways:</p>
+<ol>
+  <li>By using Postman or Curl, as described in <a href="/jon-bell-Jekyll-Canvas-Integration-Test-Class/tutorials/week3-apis">the week 3 tutorial</a></li>
+  <li>By continuing the assignment to Part 2: implementing the REST client, and using your client to test your server</li>
+  <li>By submitting your code to GradeScope, the autograder will test your server code. It will test your server using our reference client.</li>
+</ol>
+      <h3 id="rubric-specification-for-part-1">
+        
+        
+          <a href="#rubric-specification-for-part-1" class="anchor-heading" aria-labelledby="rubric-specification-for-part-1"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Rubric Specification for Part 1
+        
+        
+      </h3>
+    
+<p>Part 1 will account for 1/3 of your overall grade on this assignment.</p>
+
+<p>To receive a mark of “Satisfactory” for Part 1, your code submission must:</p>
+<ul>
+  <li>Pass all included automated tests as reported by <code class="language-plaintext highlighter-rouge">npm test</code> (the tests in <code class="language-plaintext highlighter-rouge">CoveyRoomStore.test.ts</code>)</li>
+  <li>Pass all of the automated tests run by GradeScope (which are not included in the handout)</li>
+  <li>Follow the design specification outlined above</li>
+  <li>Conform to our <a href="/jon-bell-Jekyll-Canvas-Integration-Test-Class/policies/style/">style guide</a> <em>and</em> have no style warnings or errors as reported by <code class="language-plaintext highlighter-rouge">npm run-script lint</code></li>
+  <li>Have no <code class="language-plaintext highlighter-rouge">@ts-ignore</code> or <code class="language-plaintext highlighter-rouge">eslint-disable</code> annotations in the code that you write</li>
+</ul>
+
+<p>To receive a mark of “Meets minimum expectations” for Part 1, your code submission must:</p>
+<ul>
+  <li>Pass all included automated tests as reported by <code class="language-plaintext highlighter-rouge">npm test</code> (the tests in <code class="language-plaintext highlighter-rouge">CoveyRoomStore.test.ts</code>). Other tests may fail.</li>
+  <li>Have no style errors (may have warnings) as reported by <code class="language-plaintext highlighter-rouge">npm run-script lint</code></li>
+  <li>Have no <code class="language-plaintext highlighter-rouge">@ts-ignore</code> or <code class="language-plaintext highlighter-rouge">eslint-disable</code> annotations in the code that you write</li>
+</ul>
+
+<p><strong class="label label-yellow">Warning</strong>  Submissions that do not meet the above criteria will receive no credit for Part 1.
+ <strong>Do not wait to test or style check your code until the last minute.</strong></p>
+      <h2 id="part-2">
+        
+        
+          <a href="#part-2" class="anchor-heading" aria-labelledby="part-2"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Part 2
+        
+        
+      </h2>
+    
+<p>Your next task is to implement a client for the REST API that you created in the first part of this assignment.
+The client should be implemented in the file <code class="language-plaintext highlighter-rouge">src/client/RoomServiceClient.ts</code> and use the <a href="https://www.npmjs.com/package/axios">axios library</a> to make requests to the server.
+Avery has stubbed out the client, and even added boilerplate code to create the axios client, and set the <code class="language-plaintext highlighter-rouge">baseURL</code> property on it.
+Implement each one of the API client methods using the <code class="language-plaintext highlighter-rouge">_axios</code> client. Making a call of <code class="language-plaintext highlighter-rouge">_axios.get('/endpoint');</code> will result in a <code class="language-plaintext highlighter-rouge">GET</code> request to <code class="language-plaintext highlighter-rouge">/endpoint</code> on your server,
+<code class="language-plaintext highlighter-rouge">_axios.post('/endpoint', {foo: 'bar'})</code> will result in a <code class="language-plaintext highlighter-rouge">POST</code> request to <code class="language-plaintext highlighter-rouge">/endpoint</code>, passing the request body <code class="language-plaintext highlighter-rouge">{foo: 'bar'}</code>. <strong>Important (2/11):</strong> When we test your API client, we will <em>not</em> be running the server at <code class="language-plaintext highlighter-rouge">localhost:8081</code> - so do <em>not</em> hard code that into your axios requests: please follow this syntax (otherwise the tests will all fail with <code class="language-plaintext highlighter-rouge">ECONNREFUSED 127.0.0.1:8081</code>).</p>
+
+<p>Refer to the <a href="https://www.npmjs.com/package/axios#axios-api">axios documentation</a>, and use other internet sources to learn how to use this library.
+<strong>Hint</strong>: Here is a code snippet that makes an <code class="language-plaintext highlighter-rouge">HTTP POST</code> request to the endpoint <code class="language-plaintext highlighter-rouge">/endpoint</code>, passing <code class="language-plaintext highlighter-rouge">requestData</code>, and unwrapping the response as a <code class="language-plaintext highlighter-rouge">MyResponseType</code>:
+<code class="language-plaintext highlighter-rouge">const response = await this._axios.post&lt;MyResponseType&gt;('/endpoint', requestData);</code>.</p>
+
+<p><strong>Hint (2/10)</strong>: The return type that you should be telling Axios to expect (<code class="language-plaintext highlighter-rouge">MyResponseType</code> in the prior hint) should be the <em>exact same</em> return type as the type returned by your corresponding request handler. TypeScript will <em>not</em> throw an error at
+runtime if you choose the wrong type, and instead there will be an error that will come from one (or all) of our tests failing
+since the data is malformed.</p>
+
+<p>We have created an automated test suite to evaluate the functionality of your API client, and this test suite will run when you submit your assignment to GradeScope.</p>
+
+<p>However, we strongly encourage you to test your API client <em>locally</em> (on your own machine), so that you can find and fix errors faster than it would take to zip your code, upload it to GradeScope, and receive results.</p>
+
+<p>You can manually test your API client and API server by:</p>
+<ol>
+  <li>Start the server (<code class="language-plaintext highlighter-rouge">npm run start</code>)</li>
+  <li>Use the file <code class="language-plaintext highlighter-rouge">src/client/ClientExamples.ts</code> to manually execute the API. In a different terminal window (but in the same directory - the handout directory), run this file with <code class="language-plaintext highlighter-rouge">npx ts-node src/client/ClientExamples.ts</code>.</li>
+</ol>
+
+<p>GradeScope will automatically test your client using our reference server. Hence, you can receive full marks on this part even if your server is not functional, as long as your client implements the specification.</p>
+      <h3 id="rubric-specification-for-part-2">
+        
+        
+          <a href="#rubric-specification-for-part-2" class="anchor-heading" aria-labelledby="rubric-specification-for-part-2"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Rubric Specification for Part 2
+        
+        
+      </h3>
+    
+<p>Part 2 will account for 1/3 of your overall grade on this assignment.</p>
+
+<p>To receive a mark of “Satisfactory” for Part 2, your code submission must:</p>
+<ul>
+  <li>Pass all of the automated tests run by GradeScope (which are not included in the handout). All tests must pass.</li>
+  <li>Follow the design specification outlined above</li>
+  <li>Conform to our <a href="/jon-bell-Jekyll-Canvas-Integration-Test-Class/policies/style/">style guide</a> <em>and</em> have no style warnings or errors as reported by <code class="language-plaintext highlighter-rouge">npm run-script lint</code></li>
+  <li>Have no <code class="language-plaintext highlighter-rouge">@ts-ignore</code> or <code class="language-plaintext highlighter-rouge">eslint-disable</code> annotations in the code that you write</li>
+</ul>
+
+<p>To receive a mark of “Meets minimum expectations” for Part 2, your code submission must:</p>
+<ul>
+  <li>Pass all of the automated tests run by GradeScope (which are not included in the handout). All tests must pass.</li>
+  <li>Have no style errors (may have warnings) as reported by <code class="language-plaintext highlighter-rouge">npm run-script lint</code></li>
+  <li>Have no <code class="language-plaintext highlighter-rouge">@ts-ignore</code> or <code class="language-plaintext highlighter-rouge">eslint-disable</code> annotations in the code that you write</li>
+</ul>
+
+<p><strong class="label label-yellow">Warning</strong>  Submissions that do not meet the above criteria will receive no credit for Part 2.
+ <strong>Do not wait to test or style check your code until the last minute.</strong></p>
+      <h2 id="part-3-software-architecture-research">
+        
+        
+          <a href="#part-3-software-architecture-research" class="anchor-heading" aria-labelledby="part-3-software-architecture-research"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Part 3: Software Architecture Research
+        
+        
+      </h2>
+    
+<p>Avery is somewhat concerned that Covey.Town’s launch could be an “epic fail:” if thousands of people try to connect to it,
+will the system handle the load, or will it grind to a halt, crash, and burn?
+While browsing around on Twitter, Avery found <a href="http://blog.ieeesoftware.org/2016/01/architectures-for-massively-multi-user.html">a blogpost about software architectures for massively multiplayer multi-user environments</a>.
+Read this blogpost, and based on its contents, answer the following questions related to Covey.Town’s architecture and performance.
+Please keep each answer to within 2-4 sentences, and be sure to relate your answer to the blogpost.</p>
+
+<ol>
+  <li>What aspects of Covey.Town involve sending N^2 network messages (with regards to N concurrent users)?</li>
+  <li>How does the blog post suggest that multi-player games can improve responsiveness while still maintaining a consistent view of the world?</li>
+  <li>One of the scaling approaches described in the blogpost is <em>sharding</em>. Given the system that you built in part 1 and 2, how would you suggest that we <em>shard</em> Covey.Town traffic across multiple servers?</li>
+  <li>One day, we might want to allow more than 50 players to connect to the same room - perhaps, up to 1,000 in one room. How does the article suggest architecting communication in such a big room?</li>
+</ol>
+      <h3 id="rubric-specification-for-part-3">
+        
+        
+          <a href="#rubric-specification-for-part-3" class="anchor-heading" aria-labelledby="rubric-specification-for-part-3"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Rubric Specification for Part 3
+        
+        
+      </h3>
+    
+
+<p>Each of the four questions in Part 3 will account for 1/12 of your overall grade for this assignment (that is, Part 3 will account for 1/3 of the overall grade,
+with each question weighted evenly).
+Each of the four questions will be graded to the following specification:</p>
+
+<p>To receive a mark of “Satisfactory” on a question:</p>
+<ul>
+  <li>The answer is factually correct, using the terminology and rationales provided in the blogpost</li>
+  <li>The provided explanation is 2-4 sentences, and relates the architectural concepts with the Covey.Town codebase</li>
+</ul>
+
+<p>To receive a mark of “Meets minimum expectations” on a question:</p>
+<ul>
+  <li>The answer is factually correct</li>
+  <li>The provided explanation is 2-4 sentences and discusses either an architectural concept or the Covey.Town codebase, but may not link them together</li>
+</ul>
+
+<p>Answers that do not meet the above criteria will receive no credit for that question.</p>
+      <h2 id="submission-instructions">
+        
+        
+          <a href="#submission-instructions" class="anchor-heading" aria-labelledby="submission-instructions"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Submission Instructions
+        
+        
+      </h2>
+    
+<p>Submit your assignment in GradeScope. The easiest way to get into GradeScope the first time is to first
+<a href="https://northeastern.instructure.com/courses/60188">sign into Canvas</a> and then click the link on our course for “GradeScope”. 
+You should then also have the option to create an account on GradeScope (if you don’t already have one) so that you can log in to GradeScope directly.
+Please contact the instructors immediately if you have difficulty accessing the course on GradeScope.</p>
+
+<p>Parts 1 and 2 should be submitted together on GradeScope.
+To submit Parts 1 and 2: run the command <code class="language-plaintext highlighter-rouge">npm run-script pack</code> in your project directory, which will create a zip file that is properly
+structured for submission. <strong>Important</strong>: GradeScope only accepts .zip files, <em>not</em> .tgz files - if you run <code class="language-plaintext highlighter-rouge">npm pack</code>, you will get a .tgz file, and it will not be accepted by GradeScope. Please be sure to run <code class="language-plaintext highlighter-rouge">npm run-script pack</code>. Submit this zip file to the assignment “Homework 2 (Parts 1 &amp; 2)” on GradeScope.
+GradeScope will provide you with feedback on your submission, providing a numeric score for Part 1 and Part 2 of:</p>
+<ul>
+  <li>2 (Satisfactory)</li>
+  <li>1 (Meets minimum expectations)</li>
+  <li>0 (Not passing)</li>
+</ul>
+
+<p>In the “Autograder” score, you’ll see the sum of these two values. You can view the per-part grade and complete output from running the tests and linter on GradeScope. If you have any doubts
+about the autograder, please contact the course staff immediately. In particular: if you are not able to reproduce
+and debug test or linter failures on your local machine, <strong>please</strong> ask the TAs for assistance: otherwise you’ll waste
+an immense amount of time waiting for the autograder to complete, when you could get the same feedback in seconds running
+the tests + linter locally.</p>
+
+<p>Part 3 should be submitted as a PDF on GradeScope to the assignment “Homework 2 (Part 3)”.
+Please use GradeScope’s “tagging” interface to associate each of your answers with the questions in the rubric.</p>
+
+        
+
+        
+
+        
+        
+
+      </div>
+    </div>
+
+    
+      
+
+      <div class="search-overlay"></div>
+    
+  </div>
+</body>
+</html>
+
