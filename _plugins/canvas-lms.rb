@@ -184,7 +184,31 @@ class CanvasSyncer
         ret = @api.api_put_request(url, assignment: assignment)
       end
     end
+  end
 
+  def getHomePage()
+    params = { course_id: @course_id }
+    url = LMS::Canvas.lms_url("SHOW_FRONT_PAGE_COURSES", params)
+    begin
+      return @api.api_get_request(url)
+    rescue => error
+      return {body: ""}
+    end
+  end
+
+  def syncHomePage(content, baseURL, permalink)
+    home = getHomePage()
+    content = content.gsub(/<a href="\//, '<a target="_blank" href="' + baseURL + '/')
+
+    existing_home = home.body
+    existing_home = existing_home.gsub(/<link rel="stylesheet" href="https:\/\/instructure-uploads.s3.amazonaws.com\/([^"]+)">/, '')
+    existing_home = existing_home.gsub(/<script src="https:\/\/instructure-uploads.s3.amazonaws.com\/([^"]+)"><\/script>/, '')
+    if(existing_home != content)
+      params = {course_id: @course_id}
+      url = LMS::Canvas.lms_url("UPDATE_CREATE_FRONT_PAGE_COURSES", params)
+      wiki_page = {body: content}
+      @api.api_put_request(url, wiki_page: wiki_page)
+    end
   end
 end
 
@@ -194,9 +218,10 @@ if ENV['CANVAS_COURSE_ID'] && ENV['CANVAS_TOKEN'] && ENV['CANVAS_BASE_URL']
   @moduleCount = 1;
   Jekyll::Hooks.register :pages, :post_render do |page|
     site = page.site
-    baseURL = site.config['url'] + site.baseurl
-
-    if (page['layout'] == 'assignment')
+    baseURL = site.config['url'] # + site.baseurl
+    if (page.name == "index.md" && page.dir == "/")
+      canvasSyncer.syncHomePage(page['content'], baseURL, page.permalink())
+    elsif (page['layout'] == 'assignment')
       if(page['due_date'] == nil)
         print "Canvas importer: no due date for assignment " + page['title'] + ": skipping\n"
         next
@@ -207,7 +232,7 @@ if ENV['CANVAS_COURSE_ID'] && ENV['CANVAS_TOKEN'] && ENV['CANVAS_BASE_URL']
         print "Canvas importer: no lessons for module " + page['title'] + ": skipping\n"
         next
       end
-      canvasSyncer.syncModule(page['title'], @moduleCount, page['lessons'], page['tutorials'], baseURL, page.permalink())
+      canvasSyncer.syncModule(page['title'], @moduleCount, page['lessons'], page['tutorials'], baseURL + site.baseurl, page.permalink())
       @moduleCount = @moduleCount + 1
     end
   end

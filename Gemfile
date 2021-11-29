@@ -8,6 +8,7 @@ group :jekyll_plugins do
 end
 
 gem "kramdown-parser-gfm"
-# gem 'github-pages', group: :jekyll_plugins
+gem 'github-pages', group: :jekyll_plugins
+
 gem "lms-api"
 gem "just-the-docs"
